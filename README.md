@@ -4,6 +4,7 @@
 - 🐍 My programming languages are: Python - C++ - CSS - HTML - JAVASCRIPT - TYPESCRIPT - A little bit of assembly
 - 📖 Reach me at: sasanxcoder@gmail.com
 - ⚡ Fun fact: I am currently working on a project
+- 🧾 I am 13 year-old interested in programming
 <!---
 ProgrammEverything/ProgrammEverything is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
