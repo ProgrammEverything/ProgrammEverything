@@ -15,7 +15,7 @@ jobs:
       - name: Update Projects in README
         run: |
           # Get the updated list of projects
-          new_content=$(curl -s "https://api.github.com/users/YOUR_USERNAME/repos?per_page=100" | 
+          new_content=$(curl -s "https://api.github.com/users/ProgrammEverything/repos?per_page=100" | 
             jq -r '.[] | "- [" + .name + "](" + .html_url + ")"')
           
           # Replace content between the markers in README.md
