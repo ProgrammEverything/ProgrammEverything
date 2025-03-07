@@ -2,7 +2,7 @@ name: Update README Projects
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # runs daily at midnight UTC
+    - cron: "0 0 * * *"  # Runs daily at midnight UTC
   workflow_dispatch:
 
 permissions:
@@ -23,19 +23,19 @@ jobs:
           echo "Fetching repos for PROGRAMMEVERYTHING..."
           repos_json=$(curl -s "https://api.github.com/users/PROGRAMMEVERYTHING/repos?per_page=100")
           
-          # Debug: output the JSON response
+          # Debug: Output the JSON response
           echo "$repos_json" | jq .
           
-          # Ensure the response is an array; exit if not.
+          # Verify the response is an array
           if ! echo "$repos_json" | jq 'if type=="array" then empty else "error" end' > /dev/null; then
             echo "Error: Expected an array of repositories."
             exit 1
           fi
           
-          # Generate the markdown list from each repository
+          # Generate a markdown list from the repositories
           projects=$(echo "$repos_json" | jq -r '.[] | "- [" + .name + "](" + .html_url + ")"')
           
-          # Set the projects output (using the new GITHUB_OUTPUT method)
+          # Set the output variable "projects"
           {
             echo "projects<<EOF"
             echo "$projects"
@@ -44,17 +44,16 @@ jobs:
 
       - name: Update README file
         run: |
-          # Retrieve the projects list generated in the previous step
+          # Get the projects markdown from the previous step
           new_projects="${{ steps.generate.outputs.projects }}"
           echo "New projects markdown:"
           echo "$new_projects"
           
-          # Escape any characters that might confuse Perl
+          # Escape special characters for Perl
           escaped=$(printf '%s\n' "$new_projects" | sed 's/[\/&]/\\&/g')
           
-          # Use Perl to replace the section between the markers in README.md.
-          # This uses {} as delimiters for the substitution.
-          perl -0777 -pi -e "s{<!-- START PROJECTS -->.*<!-- END PROJECTS -->}{<!-- START PROJECTS -->\n$escaped\n<!-- END PROJECTS -->}s" README.md
+          # Replace content between markers with a header and the projects list
+          perl -0777 -pi -e "s{<!-- START PROJECTS -->.*<!-- END PROJECTS -->}{<!-- START PROJECTS -->\n## List of Projects\n$escaped\n<!-- END PROJECTS -->}s" README.md
           
           echo "Updated README.md content:"
           cat README.md
