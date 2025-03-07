@@ -12,11 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Update README
+      - name: Update Projects in README
         run: |
-          echo "## My GitHub Projects" > README.md
-          curl -s "https://api.github.com/users/ProgrammEverything/repos?per_page=100" | 
-          jq -r '.[] | "- [" + .name + "](" + .html_url + ")"' >> README.md
+          # Get the updated list of projects
+          new_content=$(curl -s "https://api.github.com/users/YOUR_USERNAME/repos?per_page=100" | 
+            jq -r '.[] | "- [" + .name + "](" + .html_url + ")"')
+          
+          # Replace content between the markers in README.md
+          sed -i '/<!-- START PROJECTS -->/,/<!-- END PROJECTS -->/c\<!-- START PROJECTS -->\'"$new_content"'\<!-- END PROJECTS -->' README.md
+
       - name: Commit changes
         run: |
           git config --global user.name "github-actions[bot]"
