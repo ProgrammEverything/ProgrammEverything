@@ -13,7 +13,7 @@ jobs:
       - name: Update README
         run: |
           echo "## My GitHub Projects" > README.md
-          curl -s "https://api.github.com/users/YOUR_USERNAME/repos?per_page=100" | 
+          curl -s "https://api.github.com/users/ProgrammEverything/repos?per_page=100" | 
           jq -r '.[] | "- [" + .name + "](" + .html_url + ")"' >> README.md
       - name: Commit changes
         run: |
