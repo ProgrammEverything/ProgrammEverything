@@ -45,6 +45,7 @@ You can click the Preview link to take a look at your changes.
 - [documentation](https://github.com/ProgrammEverything/documentation)
 - [EitaaAPI](https://github.com/ProgrammEverything/EitaaAPI)
 - [FirstRepository](https://github.com/ProgrammEverything/FirstRepository)
+- [module-analyzer](https://github.com/ProgrammEverything/module-analyzer)
 - [ProgrammEverything](https://github.com/ProgrammEverything/ProgrammEverything)
 - [programmeverything.github.io](https://github.com/ProgrammEverything/programmeverything.github.io)
 - [Sarvar](https://github.com/ProgrammEverything/Sarvar)
