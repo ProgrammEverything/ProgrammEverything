@@ -38,7 +38,7 @@ You can click the Preview link to take a look at your changes.
     </tr>
   </table>
 </div>
-
+My discord channel for programming: https://discord.gg/dNRbkTsv6M
 <!-- START PROJECTS -->
 ## List of Projects
 - [documentation](https://github.com/ProgrammEverything/documentation)
