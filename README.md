@@ -13,10 +13,8 @@
   - A bit of assembly
 - 📖 Reach me at: sasanxcoder@gmail.com
 - ⚡ Fun fact: I am currently working on a project and I am learning assembly with AI
-<!---
-ProgrammEverything/ProgrammEverything is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+- My discord channel: https://discord.gg/dNRbkTsv6M
+
 ### My stats :>
 <div align="center">
   <table style="border-collapse: collapse; border: none;">
@@ -38,7 +36,7 @@ You can click the Preview link to take a look at your changes.
     </tr>
   </table>
 </div>
-My discord channel for programming: https://discord.gg/dNRbkTsv6M
+
 <!-- START PROJECTS -->
 ## List of Projects
 - [documentation](https://github.com/ProgrammEverything/documentation)
